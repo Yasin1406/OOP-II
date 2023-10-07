@@ -6,6 +6,7 @@
       <module fileurl="file://$PROJECT_DIR$/Exception Handling/Exception Handling.iml" filepath="$PROJECT_DIR$/Exception Handling/Exception Handling.iml" />
       <module fileurl="file://$PROJECT_DIR$/File and Streams/File and Streams.iml" filepath="$PROJECT_DIR$/File and Streams/File and Streams.iml" />
       <module fileurl="file://$PROJECT_DIR$/Generics/Generics.iml" filepath="$PROJECT_DIR$/Generics/Generics.iml" />
+      <module fileurl="file://$PROJECT_DIR$/MultiThreading/MultiThreading.iml" filepath="$PROJECT_DIR$/MultiThreading/MultiThreading.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/SE-306.iml" filepath="$PROJECT_DIR$/.idea/SE-306.iml" />
     </modules>
   </component>
