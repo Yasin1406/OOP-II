@@ -39,7 +39,7 @@ public class VectorTest {
             System.out.println("vector is empty");
         }
         else{
-            System.out.print("vector conains: ");
+            System.out.print("vector contains: ");
             for(String element:vectorToOutput){
                 System.out.printf("%s ",element);
             }

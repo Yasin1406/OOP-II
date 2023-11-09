@@ -7,9 +7,12 @@ public class SharedArrayTest {
         SimpleArray sharedSimpleArray=new SimpleArray(6);
         ArrayWriter writer1=new ArrayWriter(1,sharedSimpleArray);
         ArrayWriter writer2=new ArrayWriter(11,sharedSimpleArray);
+        ArrayWriter writer3=new ArrayWriter(20,sharedSimpleArray);
         ExecutorService executor= Executors.newCachedThreadPool();
         executor.execute(writer1);
+       // executor.execute(writer3);
         executor.execute(writer2);
+
         executor.shutdown();
         try{
             boolean tasksEnded=executor.awaitTermination(1, TimeUnit.MINUTES);
