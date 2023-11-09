@@ -3,7 +3,7 @@ import java.util.Random;
 
 public class GameBoard{
     public int[][] board=new int[4][4];
-    public ArrayList<Integer[]> emptyCells=new ArrayList<Integer[]>();
+    public ArrayList<Integer> emptyCells=new ArrayList<Integer>();
     public GameBoard(){
         this.initializeBoard();
     }
@@ -11,9 +11,11 @@ public class GameBoard{
         int row,column;
         Random rand=new Random();
         int coOrdinateNum=rand.nextInt(emptyCells.size());
+        int cell=emptyCells.get(coOrdinateNum);
+//        System.out.println("Cell: "+cell);
         int value=rand.nextInt(10);
-        row=emptyCells.get(coOrdinateNum)[0];
-        column=emptyCells.get(coOrdinateNum)[1];
+        row=cell/4;
+        column=cell-(row*4);
         System.out.println("Adding number to ("+row+","+column+")");
         if(value>0){
             board[row][column]=2;
@@ -21,19 +23,11 @@ public class GameBoard{
         else{
             board[row][column]=4;
         }
-        int[] cell=new int[2];
-        cell[0]=row;
-        cell[1]=column;
-        emptyCells.remove(cell);
+        emptyCells.remove(coOrdinateNum);
     }
     public void initializeBoard(){
-        for(int row=0;row<4;row++) {
-            for (int column=0;column<4;column++) {
-                Integer[] cell=new Integer[2];
-                cell[0]=row;
-                cell[1]=column;
-                emptyCells.add(cell);
-            }
+        for(Integer cell=0;cell<16;cell++){
+            emptyCells.add(cell);
         }
         addNewNumber();
         addNewNumber();
@@ -46,5 +40,15 @@ public class GameBoard{
             System.out.println();
         }
         System.out.println();
+    }
+
+    void removeEmptyCell(int row,int col){
+        Integer cellToRemove=(row*4)+col;
+        emptyCells.remove(cellToRemove);
+    }
+
+    void addEmptyCell(int row,int col){
+        Integer cellToAdd=(row*4)+col;
+        emptyCells.add(cellToAdd);
     }
 }

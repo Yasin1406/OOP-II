@@ -5,23 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e2aefccd-a8a1-4be6-998a-c90281890673" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Project_2048.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Collections/src/VectorTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Collections/src/VectorTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../MultiThreading/src/Buffer.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../MultiThreading/src/Consumer.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../MultiThreading/src/Producer.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../MultiThreading/src/SharedArrayTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/../MultiThreading/src/SharedArrayTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../MultiThreading/src/SharedBufferTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../MultiThreading/src/SimpleArray.java" beforeDir="false" afterPath="$PROJECT_DIR$/../MultiThreading/src/SimpleArray.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../MultiThreading/src/UnsynchronizeedBuffer.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Threading/.idea/workspace.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../out/production/MultiThreading/SharedArrayTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/../out/production/MultiThreading/SharedArrayTest.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../out/production/MultiThreading/SimpleArray.class" beforeDir="false" afterPath="$PROJECT_DIR$/../out/production/MultiThreading/SimpleArray.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/GameBoard.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GameBoard.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Moves.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Moves.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/RunGame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/RunGame.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Test.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Test.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -61,7 +49,7 @@
     "onboarding.tips.debug.path": "/home/yasin/SE-306/Project_2048/src/Main.java"
   }
 }]]></component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Application.RunGame">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Main" />
       <module name="Project_2048" />
