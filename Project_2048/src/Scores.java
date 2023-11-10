@@ -1,6 +1,7 @@
 import java.io.*;
 import java.time.LocalDate;
 import java.time.LocalTime;
+import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.Scanner;
 
@@ -14,6 +15,9 @@ public class Scores {
         this.name=name;
         LocalDate currentDate=LocalDate.now();
         LocalTime currentTime=LocalTime.now();
+        currentTime=currentTime.withNano(0);
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("HH:mm:ss");
+        String formattedTime = currentTime.format(formatter);
         dateTime=currentDate.toString()+" "+currentTime.toString();
     }
 
@@ -97,7 +101,7 @@ public class Scores {
 
     public static void printHighScores() throws FileNotFoundException {
         try(Scanner scanner=new Scanner(new File("highscores.txt"))){
-            System.out.println("Score\tName\tDate and time");
+            System.out.println("\n\nScore Name Date and time");
             String line;
             while(scanner.hasNextLine()){
                 line=scanner.nextLine();
@@ -110,6 +114,6 @@ public class Scores {
 
     @Override
     public String toString(){
-        return score+"\t"+name+"\t"+dateTime;
+        return score+" "+name+" "+dateTime;
     }
 }

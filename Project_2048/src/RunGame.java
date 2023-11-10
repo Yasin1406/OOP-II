@@ -17,7 +17,7 @@ public class RunGame {
         playGame();
     }
     public static void playGame() throws IOException {
-        System.out.println("1 to start game.");
+        System.out.println("\n\n1 to start game.");
         System.out.println("2 to see high scores.");
         System.out.println("3 to exit game.");
         Scanner scanner=new Scanner(System.in);
