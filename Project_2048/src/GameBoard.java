@@ -2,6 +2,7 @@ import java.util.ArrayList;
 import java.util.Random;
 
 public class GameBoard{
+    public int score;
     public int[][] board=new int[4][4];
     public ArrayList<Integer> emptyCells=new ArrayList<Integer>();
     public GameBoard(){
@@ -12,11 +13,10 @@ public class GameBoard{
         Random rand=new Random();
         int coOrdinateNum=rand.nextInt(emptyCells.size());
         int cell=emptyCells.get(coOrdinateNum);
-//        System.out.println("Cell: "+cell);
         int value=rand.nextInt(10);
         row=cell/4;
         column=cell-(row*4);
-        System.out.println("Adding number to ("+row+","+column+")");
+//        System.out.println("Adding number to ("+row+","+column+")");
         if(value>0){
             board[row][column]=2;
         }
@@ -33,9 +33,16 @@ public class GameBoard{
         addNewNumber();
     }
     public void printBoard(){
+        System.out.println("Score: "+score);
+        char ch='-';
         for(int[] r:board){
             for(int col:r){
-                System.out.printf("%6d",col);
+                if(col==0){
+                    System.out.printf("%6c",ch);
+                }
+                else{
+                    System.out.printf("%6d",col);
+                }
             }
             System.out.println();
         }

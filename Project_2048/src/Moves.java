@@ -4,42 +4,6 @@ public class Moves {
         this.b=b;
     }
     public void moveUp(){
-        int i,j;
-        boolean isPossible=false;
-        for(i=0;i<4;i++){
-            int[] col={b.board[0][i],b.board[1][i],b.board[2][i],b.board[3][i]};
-            if(col[0]==0){
-                if(col[1]>0||col[2]>0||col[3]>0){
-                    isPossible=true;
-                    break;
-                }
-            }
-            int currNonZero=col[0],nonZeroInterval=0;
-            for(j=1;j<4;j++){
-                if(col[j]>0){
-                    if(currNonZero==col[j]){
-                        isPossible=true;
-                        break;
-                    }
-                    else{
-                        if(nonZeroInterval>0){
-                            isPossible=true;
-                            break;
-                        }
-                        else{
-                            nonZeroInterval=0;
-                        }
-                    }
-                }
-                else{
-                    nonZeroInterval++;
-                }
-            }
-        }
-        if(!isPossible){
-            System.out.println("Cannot move up");
-            return;
-        }
         int currRow,row,column;
         for(row=1;row<4;row++){
             for(column=0;column<4;column++){
@@ -72,6 +36,7 @@ public class Moves {
                         }
                         else{
                             b.board[currRow][column]*=2;
+                            b.score+=b.board[currRow][column];
                             b.board[row][column]=0;
                             b.addEmptyCell(row,column);
                         }
@@ -90,43 +55,8 @@ public class Moves {
         b.addNewNumber();
         b.printBoard();
     }
+
     public void moveDown(){
-        int i,j;
-        boolean isPossible=false;
-        for(i=0;i<4;i++){
-            int[] col={b.board[0][i],b.board[1][i],b.board[2][i],b.board[3][i]};
-            if(col[3]==0){
-                if(col[1]>0||col[2]>0||col[0]>0){
-                    isPossible=true;
-                    break;
-                }
-            }
-            int currNonZero=col[3],nonZeroInterval=0;
-            for(j=2;j>=0;j--){
-                if(col[j]>0){
-                    if(currNonZero==col[j]){
-                        isPossible=true;
-                        break;
-                    }
-                    else{
-                        if(nonZeroInterval>0){
-                            isPossible=true;
-                            break;
-                        }
-                        else{
-                            nonZeroInterval=0;
-                        }
-                    }
-                }
-                else{
-                    nonZeroInterval++;
-                }
-            }
-        }
-        if(!isPossible){
-            System.out.println("Cannot move down");
-            return;
-        }
         int currRow,row,column;
         for(row=2;row>=0;row--){
             for(column=0;column<4;column++){
@@ -159,6 +89,7 @@ public class Moves {
                         }
                         else{
                             b.board[currRow][column]*=2;
+                            b.score+=b.board[currRow][column];
                             b.board[row][column]=0;
                             b.addEmptyCell(row,column);
                         }
@@ -178,43 +109,7 @@ public class Moves {
         b.printBoard();
     }
 
-    public void moveRight(){
-        int i,j;
-        boolean isPossible=false;
-        for(i=0;i<4;i++){
-            int[] rw={b.board[i][0],b.board[i][1],b.board[i][2],b.board[i][3]};
-            if(rw[0]==0){
-                if(rw[1]>0||rw[2]>0||rw[3]>0){
-                    isPossible=true;
-                    break;
-                }
-            }
-            int currNonZero=rw[0],nonZeroInterval=0;
-            for(j=1;j<4;j++){
-                if(rw[j]>0){
-                    if(currNonZero==rw[j]){
-                        isPossible=true;
-                        break;
-                    }
-                    else{
-                        if(nonZeroInterval>0){
-                            isPossible=true;
-                            break;
-                        }
-                        else{
-                            nonZeroInterval=0;
-                        }
-                    }
-                }
-                else{
-                    nonZeroInterval++;
-                }
-            }
-        }
-        if(!isPossible){
-            System.out.println("Cannot move right");
-            return;
-        }
+    public void moveLeft(){
         int currCol,row,column;
         for(column=1;column<4;column++){
             for(row=0;row<4;row++){
@@ -247,6 +142,7 @@ public class Moves {
                         }
                         else{
                             b.board[row][currCol]*=2;
+                            b.score+=b.board[row][currCol];
                             b.board[row][column]=0;
                             b.addEmptyCell(row,column);
                         }
@@ -266,43 +162,7 @@ public class Moves {
         b.printBoard();
     }
 
-    public void moveLeft(){
-        int i,j;
-        boolean isPossible=false;
-        for(i=0;i<4;i++){
-            int[] rw={b.board[i][0],b.board[i][1],b.board[i][2],b.board[i][3]};
-            if(rw[3]==0){
-                if(rw[1]>0||rw[2]>0||rw[0]>0){
-                    isPossible=true;
-                    break;
-                }
-            }
-            int currNonZero=rw[3],nonZeroInterval=0;
-            for(j=2;j>=0;j--){
-                if(rw[j]>0){
-                    if(currNonZero==rw[j]){
-                        isPossible=true;
-                        break;
-                    }
-                    else{
-                        if(nonZeroInterval>0){
-                            isPossible=true;
-                            break;
-                        }
-                        else{
-                            nonZeroInterval=0;
-                        }
-                    }
-                }
-                else{
-                    nonZeroInterval++;
-                }
-            }
-        }
-        if(!isPossible){
-            System.out.println("Cannot move left");
-            return;
-        }
+    public void moveRight(){
         int currCol,row,column;
         for(column=2;column>=0;column--){
             for(row=0;row<4;row++){
@@ -335,6 +195,7 @@ public class Moves {
                         }
                         else{
                             b.board[row][currCol]*=2;
+                            b.score+=b.board[row][currCol];
                             b.board[row][column]=0;
                             b.addEmptyCell(row,column);
                         }
@@ -353,6 +214,88 @@ public class Moves {
         b.addNewNumber();
         b.printBoard();
     }
+
+    void possibleMoves(boolean[] move){
+        int i,j;
+        for(i=0;i<4;i++){
+            move[i]=false;
+        }
+
+        for(i=0;i<4;i++){                       // Up
+            int col[]={b.board[0][i],b.board[1][i],b.board[2][i],b.board[3][i]};
+            for(j=3;j>0;j--){
+                if(col[j]==0){
+                    continue;
+                }
+                else{
+                    if(col[j-1]==0||col[j-1]==col[j]){
+                        move[0]=true;
+                        break;
+                    }
+                }
+            }
+            if(move[0]){
+                break;
+            }
+        }
+
+        for(i=0;i<4;i++){                       // Down
+            int col[]={b.board[0][i],b.board[1][i],b.board[2][i],b.board[3][i]};
+            for(j=0;j<3;j++){
+                if(col[j]==0){
+                    continue;
+                }
+                else{
+                    if(col[j+1]==0||col[j+1]==col[j]){
+                        move[1]=true;
+                        break;
+                    }
+                }
+            }
+            if(move[1]){
+                break;
+            }
+        }
+
+        for(i=0;i<4;i++){                       // Left
+            int[] rw={b.board[i][0],b.board[i][1],b.board[i][2],b.board[i][3]};
+            for(j=3;j>0;j--){
+                if(rw[j]==0){
+                    continue;
+                }
+                else{
+                    if(rw[j-1]==0||rw[j-1]==rw[j]){
+                        move[2]=true;
+                        break;
+                    }
+                }
+            }
+            if(move[2]){
+                break;
+            }
+        }
+
+        for(i=0;i<4;i++){                       // Right
+            int[] rw={b.board[i][0],b.board[i][1],b.board[i][2],b.board[i][3]};
+            for(j=0;j<3;j++){
+                if(rw[j]==0){
+                    continue;
+                }
+                else{
+                    if(rw[j+1]==0||rw[j+1]==rw[j]){
+                        move[3]=true;
+                        break;
+                    }
+                }
+            }
+            if(move[3]){
+                break;
+            }
+        }
+    }
+
 }
+
+
 
 
