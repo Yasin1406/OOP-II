@@ -1,22 +1,17 @@
-public class Test {
-    public Test(){
+import java.time.LocalDate;
+import java.time.LocalDateTime;
+import java.time.LocalTime;
+import java.time.format.DateTimeFormatter;
 
-    }
+public class Test {
+
     public static void main(String[] args) {
-        Test t=new Test();
-        int[] arr={1,2,3};
-        t.change(arr);
-        t.print(arr);
+        LocalDate currentDate;
+        currentDate=LocalDate.now();
+        String dateTime=currentDate.toString();
+        LocalTime currentTime=LocalTime.now();
+        dateTime=dateTime+" "+currentTime;
+        System.out.println(dateTime);
     }
-    void change(int[] arr){
-        for(int i=0;i<arr.length;i++){
-            arr[i]++;
-        }
-    }
-    void print(int[] arr){
-        for(int i:arr){
-            System.out.print(i+" ");
-        }
-        System.out.println();
-    }
+
 }

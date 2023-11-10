@@ -1,7 +1,11 @@
 public class Moves {
     GameBoard b;
+    boolean move[]=new boolean[4];
     public Moves(GameBoard b){
         this.b=b;
+        for(int i=0;i<4;i++){
+            this.move[i]=true;
+        }
     }
     public void moveUp(){
         int currRow,row,column;
@@ -53,6 +57,9 @@ public class Moves {
             }
         }
         b.addNewNumber();
+        if(b.score>RunGame.highestScore){
+            RunGame.highestScore=b.score;
+        }
         b.printBoard();
     }
 
@@ -106,6 +113,9 @@ public class Moves {
             }
         }
         b.addNewNumber();
+        if(b.score>RunGame.highestScore){
+            RunGame.highestScore=b.score;
+        }
         b.printBoard();
     }
 
@@ -159,6 +169,9 @@ public class Moves {
             }
         }
         b.addNewNumber();
+        if(b.score>RunGame.highestScore){
+            RunGame.highestScore=b.score;
+        }
         b.printBoard();
     }
 
@@ -212,10 +225,13 @@ public class Moves {
             }
         }
         b.addNewNumber();
+        if(b.score>RunGame.highestScore){
+            RunGame.highestScore=b.score;
+        }
         b.printBoard();
     }
 
-    void possibleMoves(boolean[] move){
+    void possibleMoves(){
         int i,j;
         for(i=0;i<4;i++){
             move[i]=false;
@@ -295,7 +311,3 @@ public class Moves {
     }
 
 }
-
-
-
-

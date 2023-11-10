@@ -16,7 +16,6 @@ public class GameBoard{
         int value=rand.nextInt(10);
         row=cell/4;
         column=cell-(row*4);
-//        System.out.println("Adding number to ("+row+","+column+")");
         if(value>0){
             board[row][column]=2;
         }
@@ -33,7 +32,7 @@ public class GameBoard{
         addNewNumber();
     }
     public void printBoard(){
-        System.out.println("Score: "+score);
+        System.out.println("Score: "+score+"\t\t"+"High score: "+RunGame.highestScore);
         char ch='-';
         for(int[] r:board){
             for(int col:r){
@@ -46,7 +45,7 @@ public class GameBoard{
             }
             System.out.println();
         }
-        System.out.println();
+        System.out.println("------------------------------");
     }
 
     void removeEmptyCell(int row,int col){
