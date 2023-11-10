@@ -7,12 +7,13 @@ public class Moves {
             this.move[i]=true;
         }
     }
+
     public void moveUp(){
         int currRow,row,column;
         for(row=1;row<4;row++){
-            boolean[] isColVisited={false,false,false,false};
+            //          boolean[] isColVisited={false,false,false,false};
             for(column=0;column<4;column++){
-//                boolean[] isColVisited={false,false,false,false};
+                boolean[] isColVisited={false,false,false,false};
                 if(b.board[row][column]==0){
                     continue;
                 }
@@ -68,9 +69,9 @@ public class Moves {
     public void moveDown(){
         int currRow,row,column;
         for(row=2;row>=0;row--){
-            boolean[] isColVisited={false,false,false,false};
+  //          boolean[] isColVisited={false,false,false,false};
             for(column=0;column<4;column++){
-//                boolean[] isColVisited={false,false,false,false};
+                boolean[] isColVisited={false,false,false,false};
                 if(b.board[row][column]==0){
                     continue;
                 }
@@ -126,9 +127,9 @@ public class Moves {
     public void moveLeft(){
         int currCol,row,column;
         for(column=1;column<4;column++){
-            boolean[] isRowVisited={false,false,false,false};
+ //           boolean[] isRowVisited={false,false,false,false};
             for(row=0;row<4;row++){
-//                boolean[] isRowVisited={false,false,false,false};
+                boolean[] isRowVisited={false,false,false,false};
                 if(b.board[row][column]==0){
                     continue;
                 }
@@ -184,9 +185,9 @@ public class Moves {
     public void moveRight(){
         int currCol,row,column;
         for(column=2;column>=0;column--){
-            boolean[] isRowVisited={false,false,false,false};
+//            boolean[] isRowVisited={false,false,false,false};
             for(row=0;row<4;row++){
-//                boolean[] isRowVisited={false,false,false,false};
+                boolean[] isRowVisited={false,false,false,false};
                 if(b.board[row][column]==0){
                     continue;
                 }
