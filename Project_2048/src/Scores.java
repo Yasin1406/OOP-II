@@ -97,6 +97,7 @@ public class Scores {
 
     public static void printHighScores() throws FileNotFoundException {
         try(Scanner scanner=new Scanner(new File("highscores.txt"))){
+            System.out.println("Score\tName\tDate and time");
             String line;
             while(scanner.hasNextLine()){
                 line=scanner.nextLine();
@@ -109,6 +110,6 @@ public class Scores {
 
     @Override
     public String toString(){
-        return score+" "+name+" "+dateTime;
+        return score+"\t"+name+"\t"+dateTime;
     }
 }

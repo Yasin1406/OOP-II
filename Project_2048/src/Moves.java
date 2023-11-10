@@ -1,6 +1,6 @@
 public class Moves {
     GameBoard b;
-    boolean move[]=new boolean[4];
+    boolean[] move=new boolean[4];
     public Moves(GameBoard b){
         this.b=b;
         for(int i=0;i<4;i++){
@@ -10,8 +10,9 @@ public class Moves {
     public void moveUp(){
         int currRow,row,column;
         for(row=1;row<4;row++){
+            boolean[] isColVisited={false,false,false,false};
             for(column=0;column<4;column++){
-                boolean[] isColVisited={false,false,false,false};
+//                boolean[] isColVisited={false,false,false,false};
                 if(b.board[row][column]==0){
                     continue;
                 }
@@ -43,6 +44,7 @@ public class Moves {
                             b.score+=b.board[currRow][column];
                             b.board[row][column]=0;
                             b.addEmptyCell(row,column);
+                            isColVisited[currRow]=true;
                         }
                     }
                     else{
@@ -66,8 +68,9 @@ public class Moves {
     public void moveDown(){
         int currRow,row,column;
         for(row=2;row>=0;row--){
+            boolean[] isColVisited={false,false,false,false};
             for(column=0;column<4;column++){
-                boolean[] isColVisited={false,false,false,false};
+//                boolean[] isColVisited={false,false,false,false};
                 if(b.board[row][column]==0){
                     continue;
                 }
@@ -99,6 +102,7 @@ public class Moves {
                             b.score+=b.board[currRow][column];
                             b.board[row][column]=0;
                             b.addEmptyCell(row,column);
+                            isColVisited[currRow]=true;
                         }
                     }
                     else{
@@ -122,8 +126,9 @@ public class Moves {
     public void moveLeft(){
         int currCol,row,column;
         for(column=1;column<4;column++){
+            boolean[] isRowVisited={false,false,false,false};
             for(row=0;row<4;row++){
-                boolean[] isRowVisited={false,false,false,false};
+//                boolean[] isRowVisited={false,false,false,false};
                 if(b.board[row][column]==0){
                     continue;
                 }
@@ -155,6 +160,7 @@ public class Moves {
                             b.score+=b.board[row][currCol];
                             b.board[row][column]=0;
                             b.addEmptyCell(row,column);
+                            isRowVisited[currCol]=true;
                         }
                     }
                     else{
@@ -178,8 +184,9 @@ public class Moves {
     public void moveRight(){
         int currCol,row,column;
         for(column=2;column>=0;column--){
+            boolean[] isRowVisited={false,false,false,false};
             for(row=0;row<4;row++){
-                boolean[] isRowVisited={false,false,false,false};
+//                boolean[] isRowVisited={false,false,false,false};
                 if(b.board[row][column]==0){
                     continue;
                 }
@@ -211,6 +218,7 @@ public class Moves {
                             b.score+=b.board[row][currCol];
                             b.board[row][column]=0;
                             b.addEmptyCell(row,column);
+                            isRowVisited[currCol]=true;
                         }
                     }
                     else{
@@ -238,12 +246,9 @@ public class Moves {
         }
 
         for(i=0;i<4;i++){                       // Up
-            int col[]={b.board[0][i],b.board[1][i],b.board[2][i],b.board[3][i]};
+            int[] col={b.board[0][i],b.board[1][i],b.board[2][i],b.board[3][i]};
             for(j=3;j>0;j--){
-                if(col[j]==0){
-                    continue;
-                }
-                else{
+                if(col[j]!=0){
                     if(col[j-1]==0||col[j-1]==col[j]){
                         move[0]=true;
                         break;
@@ -256,12 +261,9 @@ public class Moves {
         }
 
         for(i=0;i<4;i++){                       // Down
-            int col[]={b.board[0][i],b.board[1][i],b.board[2][i],b.board[3][i]};
+            int[] col={b.board[0][i],b.board[1][i],b.board[2][i],b.board[3][i]};
             for(j=0;j<3;j++){
-                if(col[j]==0){
-                    continue;
-                }
-                else{
+                if(col[j]!=0){
                     if(col[j+1]==0||col[j+1]==col[j]){
                         move[1]=true;
                         break;
@@ -276,10 +278,7 @@ public class Moves {
         for(i=0;i<4;i++){                       // Left
             int[] rw={b.board[i][0],b.board[i][1],b.board[i][2],b.board[i][3]};
             for(j=3;j>0;j--){
-                if(rw[j]==0){
-                    continue;
-                }
-                else{
+                if(rw[j]!=0){
                     if(rw[j-1]==0||rw[j-1]==rw[j]){
                         move[2]=true;
                         break;
@@ -294,10 +293,7 @@ public class Moves {
         for(i=0;i<4;i++){                       // Right
             int[] rw={b.board[i][0],b.board[i][1],b.board[i][2],b.board[i][3]};
             for(j=0;j<3;j++){
-                if(rw[j]==0){
-                    continue;
-                }
-                else{
+                if(rw[j]!=0){
                     if(rw[j+1]==0||rw[j+1]==rw[j]){
                         move[3]=true;
                         break;

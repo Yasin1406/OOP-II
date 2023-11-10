@@ -1,6 +1,5 @@
 import java.io.IOException;
 import java.util.ArrayList;
-import java.util.InputMismatchException;
 import java.util.Objects;
 import java.util.Scanner;
 
@@ -16,74 +15,11 @@ public class RunGame {
             highestScore=highScore.get(0).getScore();
         }
         playGame();
-//        GameBoard b=new GameBoard();
-//        Moves m=new Moves(b);
-//        b.printBoard();
-//        int c;
-//        Scanner scanner=new Scanner(System.in);
-//        while(true){
-//            c= scanner.nextInt();
-//            if(c==8){
-//                if(m.move[0]){
-//                    m.moveUp();
-//                }
-//                else{
-//                    System.out.println("Cannot move up!");
-//                }
-//            }
-//            else if(c==2){
-//                if(m.move[1]){
-//                    m.moveDown();
-//                }
-//                else{
-//                    System.out.println("Cannot move down!");
-//                }
-//            }
-//            else if(c==4){
-//                if(m.move[2]){
-//                    m.moveLeft();
-//                }
-//                else{
-//                    System.out.println("Cannot move left!");
-//                }
-//            }
-//            else if(c==6){
-//                if(m.move[3]){
-//                    m.moveRight();
-//                }
-//                else{
-//                    System.out.println("Cannot move right!");
-//                }
-//            }
-//            else if(c==5){
-//                System.out.println("Score: "+m.b.score);
-//                String name;
-//                scanner.nextLine();
-//                System.out.print("Enter name: ");
-//                name= scanner.nextLine();
-//                Scores sc=new Scores(m.b.score,name);
-//                Scores.putHighScores(highScore,sc);
-//                Scores.printHighScores();
-//                break;
-//            }
-//            m.possibleMoves();
-//            if(!m.move[0]&&!m.move[1]&&!m.move[2]&&!m.move[3]){
-//                System.out.println("Game over!");
-//                System.out.println("Score: "+m.b.score);
-//                String name;
-//                scanner.nextLine();
-//                System.out.print("Enter name: ");
-//                name= scanner.nextLine();
-//                Scores sc=new Scores(m.b.score,name);
-//                Scores.putHighScores(highScore,sc);
-//                Scores.printHighScores();
-//                break;
-//            }
-//        }
     }
     public static void playGame() throws IOException {
         System.out.println("1 to start game.");
         System.out.println("2 to see high scores.");
+        System.out.println("3 to exit game.");
         Scanner scanner=new Scanner(System.in);
         int c;
         System.out.print("Enter choice: ");
@@ -93,6 +29,10 @@ public class RunGame {
         }
         else if(c==2){
             Scores.printHighScores();
+            playGame();
+        }
+        else if(c==3){
+            return;
         }
         else{
             System.out.println("Invalid input!");
@@ -120,7 +60,7 @@ public class RunGame {
                     m.moveUp();
                 }
                 else{
-                    System.out.println("Cannot move up!");
+                    System.out.println("Cannot move up!\n");
                 }
             }
             else if(c==2){
@@ -128,7 +68,7 @@ public class RunGame {
                     m.moveDown();
                 }
                 else{
-                    System.out.println("Cannot move down!");
+                    System.out.println("Cannot move down!\n");
                 }
             }
             else if(c==4){
@@ -136,7 +76,7 @@ public class RunGame {
                     m.moveLeft();
                 }
                 else{
-                    System.out.println("Cannot move left!");
+                    System.out.println("Cannot move left!\n");
                 }
             }
             else if(c==6){
@@ -144,7 +84,7 @@ public class RunGame {
                     m.moveRight();
                 }
                 else{
-                    System.out.println("Cannot move right!");
+                    System.out.println("Cannot move right!\n");
                 }
             }
             else if(c==5){
@@ -163,6 +103,7 @@ public class RunGame {
                     name= scanner.nextLine();
                     Scores sc=new Scores(m.b.score,name);
                     Scores.putHighScores(highScore,sc);
+                    playGame();
                     break;
                 }
                 else if(Objects.equals(ch, "r")){
