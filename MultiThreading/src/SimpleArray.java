@@ -1,14 +1,16 @@
 import java.util.Random;
+import java.util.Stack;
 
 public class SimpleArray {
+    Stack rawType=new Stack();
     private final int[] array;
     private int writeIndex=0;
     private final static Random generator=new Random();
     public SimpleArray(int size){
         array=new int[size];
     }
-  //  public synchronized void add(int value){
-    public void add(int value){
+    public synchronized void add(int value){
+//    public void add(int value){
         int position=writeIndex;
         try{
             Thread.sleep(generator.nextInt(500));

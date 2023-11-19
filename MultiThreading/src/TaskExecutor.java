@@ -14,12 +14,12 @@ public class TaskExecutor {
         threadExecutor.execute(task2);
         threadExecutor.execute(task3);
         threadExecutor.shutdown();
-//        try{
-//            threadExecutor.execute(task4);
-//        }
-//        catch(RejectedExecutionException exception){
-//            System.out.printf("%s",exception);
-//        }
+        try{
+            threadExecutor.execute(task4);
+        }
+        catch(RejectedExecutionException exception){
+            System.out.printf("%s",exception);
+        }
         System.out.println("Tasks started, main ends.\n");
     }
 }

@@ -10,7 +10,7 @@ public class SharedArrayTest {
         ArrayWriter writer3=new ArrayWriter(20,sharedSimpleArray);
         ExecutorService executor= Executors.newCachedThreadPool();
         executor.execute(writer1);
-       // executor.execute(writer3);
+//        executor.execute(writer3);
         executor.execute(writer2);
 
         executor.shutdown();
